@@ -4,7 +4,7 @@
 
 name: GPTSmartSearch Apps Deployment
 env:
-  DO_BUILD_DURING_DEPLOYMENT: true
+  DO_BUILD_DURING_DEPLOYMENT: false
 
 on:
   push:
