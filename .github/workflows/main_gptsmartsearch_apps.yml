@@ -46,7 +46,6 @@ jobs:
           cp -r ./common/*.* ./target/backend
 
       - name: Create and start virtual environment in backend folder
-        if: ${{ !env.DO_BUILD_DURING_DEPLOYMENT }}
         run: |
           python -m venv ./target/backend/venv
           source ./target/backend/venv/bin/activate
