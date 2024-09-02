@@ -51,7 +51,6 @@ jobs:
           source ./target/backend/venv/bin/activate
       
       - name: Install backend dependencies
-        if: ${{ !env.DO_BUILD_DURING_DEPLOYMENT }}
         run: pip install -r ./target/backend/requirements.txt
         
       - name: merge frontend and common folder 
@@ -62,13 +61,11 @@ jobs:
           cp -r ./common/*.* ./target/frontend
 
       - name: Create and start virtual environment in frontend folder
-        if: ${{ !env.DO_BUILD_DURING_DEPLOYMENT }}
         run: |
           python -m venv ./target/frontend/venv
           source ./target/frontend/venv/bin/activate
       
       - name: Install frontend dependencies
-        if: ${{ !env.DO_BUILD_DURING_DEPLOYMENT }}
         run: pip install -r ./target/frontend/requirements.txt
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
